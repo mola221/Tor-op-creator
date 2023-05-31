@@ -58,6 +58,7 @@ echo "Generated password: $password"
 (sleep 3; echo "$password";) | bt 5
 # Display aapanel login information
 bt 14
+echo "$password"
 # Display contents of /var/lib/tor/torimpreza/hostname
 cat /var/lib/tor/torimpreza/hostname
 
