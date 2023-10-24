@@ -33,6 +33,7 @@ sed -i "s/aaPanel linux panel/Tor Impreza - $customer_id/g" /www/server/panel/co
 
 
 if [ "$backup_choice" == "y" ]; then
+  echo "@reboot /opt/ImprezaBackup/backup-daemon-start-background.sh" | sudo crontab -
   wget -O install.run --content-disposition --post-data 'SelfAddress=https%3A%2F%2Fbackup.imprezahost.com%2F&Platform=7' 'https://backup.imprezahost.com/api/v1/admin/branding/generate-client/by-platform'
   chmod +x install.run
   export COMET_USERNAME=tor
